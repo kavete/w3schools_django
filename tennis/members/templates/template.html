@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing</title>
+</head>
+<body>
+{#    <ul>#}
+{#        {% for x in my_members %}#}
+{#            <li> {{ x.firstname }} </li>#}
+{#        {% endfor %}#}
+{#    </ul>#}
+
+<h1> {{ first_name }}</h1>
+    
+{% with last_name="Kavete" %}
+    <h2> {{ first_name }} {{ last_name }}</h2>
+{% endwith %}
+
+{% if greeting == 1 %}
+    <h3> Good morning</h3>
+{% elif greeting == 2 %}
+    <h3> Good Afternoon</h3>
+{% else %}
+    <h3> Good Night</h3>
+{% endif %}
+
+{% if greeting == 1 and day == "Friday" %}
+    <p>Good morning? Have a nice Friday!</p>
+{% elif greeting == 3 or day == "Saturday" %}
+    <p>Have a nice weekend!</p>
+{% endif %}
+
+
+{%  with var1=x, var2=x %}
+    {% if var1 is var2 %}
+        <p>Same Object</p>
+    {% else %}
+        <p>Different objects</p>
+    {% endif %}
+{% endwith %}
+</body>
+</html>
